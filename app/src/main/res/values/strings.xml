@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Room_Database</string>
+    <string-array name="data_prio">
+        <item>
+            Low
+        </item>
+        <item>
+            High
+        </item>
+    </string-array>
+</resources>
