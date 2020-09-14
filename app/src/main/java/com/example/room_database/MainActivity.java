@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements MyItemClick {
     @Override
     public void onCustomClick(View view, int position) {
         singleRow_deletion = singleRowArrayList.get(position);
-        //Toast.makeText(getApplicationContext(), singleRow.getId() + "", Toast.LENGTH_SHORT).show();
         myAyncdelete myAyncdelete = new myAyncdelete();
         myAyncdelete.execute();
     }
@@ -83,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements MyItemClick {
             super.onPostExecute(aVoid);
             singleRowArrayList.clear();
             for (int i = 0; i < li.size(); i++) {
-                //Toast.makeText(getApplicationContext(), li.get(i).getTitle() + " " + li.get(i).getId(), Toast.LENGTH_SHORT).show();
                 singleRow = new SingleRow(li.get(i).getPriority(), li.get(i).getTitle(), li.get(i).getDescription(), li.get(i).getId());
                 singleRowArrayList.add(singleRow);
             }
