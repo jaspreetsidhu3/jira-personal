@@ -16,15 +16,17 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class AddScreen extends AppCompatActivity {
+    //Class
 private EditText edittitle;
 private EditText editdesc;
 private Button btnadd;
 private Spinner spinner;
 AppDatabase appDatabase;
+// Varibles
     String title;
     String desc;
-
-int i=-1;
+    int i=-1;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
