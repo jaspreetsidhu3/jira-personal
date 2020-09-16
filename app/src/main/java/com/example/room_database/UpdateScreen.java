@@ -18,14 +18,17 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 public class UpdateScreen extends AppCompatActivity {
+    //Classes
 private EditText edittitle;
 private EditText editdesc;
 private Spinner spinnerupdate;
 private Button buttonupdate;
-int ID=0;
-int priority=-1;
+// Variable
+    int ID=0;
+    int priority=-1;
     String utitle;
     String udesc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
