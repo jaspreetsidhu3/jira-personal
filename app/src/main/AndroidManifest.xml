@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateScreen"></activity>
+        <activity android:name=".UpdateScreen"/>
         <activity android:name=".AddScreen" />
         <activity android:name=".MainActivity">
             <intent-filter>
