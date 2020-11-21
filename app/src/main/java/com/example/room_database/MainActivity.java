@@ -62,11 +62,11 @@ public class MainActivity extends AppCompatActivity implements MyItemClick {
     @Override
     public void onupdateCustomClick(View view, int position) {
         SingleRow singleRow_id = singleRowArrayList.get(position);
-            Intent intent=new Intent(getApplicationContext(),UpdateScreen.class);
-            intent.putExtra("id",singleRow_id.getId());
-            intent.putExtra("title",singleRow_id.getTitle());
-            intent.putExtra("description",singleRow_id.getDescription());
-            startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), UpdateScreen.class);
+        intent.putExtra("id", singleRow_id.getId());
+        intent.putExtra("title", singleRow_id.getTitle());
+        intent.putExtra("description", singleRow_id.getDescription());
+        startActivity(intent);
     }
 
 

@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
+
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
         android:id="@+id/container"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <RelativeLayout
                 android:layout_width="100dp"
-                android:layout_height="200dp"
-                >
+                android:layout_height="200dp">
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:elevation="120dp"
                     android:layout_centerInParent="true"
+                    android:elevation="120dp"
 
-                    app:cardCornerRadius="90dp"
-                    >
+                    app:cardCornerRadius="90dp">
+
                     <RelativeLayout
+                        android:id="@+id/priority"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/priority"
-                        android:background="@color/colorPrimaryDark"
-                        ></RelativeLayout>
+                        android:background="@color/colorPrimaryDark"></RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </RelativeLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:text="Title"
                     android:id="@+id/title"
                     style="@style/TextAppearance.AppCompat.Medium"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:gravity="center_vertical"
-                    ></TextView>
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:text="Description"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="Title"></TextView>
+
+                <TextView
                     android:id="@+id/description"
                     style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    ></TextView>
+                    android:text="Description"></TextView>
             </LinearLayout>
 
         </LinearLayout>
 
     </RelativeLayout>
+
     <View
         android:layout_width="wrap_content"
         android:layout_height="2dp"
-        android:background="#17000000"
+        android:layout_below="@id/container"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_below="@id/container"
-        ></View>
+        android:background="#17000000"></View>
 </RelativeLayout>

@@ -6,10 +6,10 @@ public class SingleRow {
     int id;
     private String description;
 
-    public SingleRow(int prority, String title, String description,int id) {
+    public SingleRow(int prority, String title, String description, int id) {
         this.prority = prority;
         this.title = title;
-        this.id=id;
+        this.id = id;
         this.description = description;
     }
 

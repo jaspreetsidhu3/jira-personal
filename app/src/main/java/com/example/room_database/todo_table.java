@@ -15,9 +15,9 @@ public class todo_table {
     @ColumnInfo(name = "description")
     public String description;
 
-    public todo_table(String title, String description,int priority) {
+    public todo_table(String title, String description, int priority) {
         this.title = title;
-        this.priority=priority;
+        this.priority = priority;
         this.description = description;
     }
 

@@ -18,18 +18,17 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTintMode="add"
         android:clickable="true"
         android:onClick="openAddScreen"
-        android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@color/colorPrimary"
-        android:background="@color/colorPrimary"
-        android:backgroundTintMode="add"
-        android:src="@drawable/ic_baseline_add_24"
-        app:rippleColor="@color/colorPrimary"
-         />
+        app:rippleColor="@color/colorPrimary" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

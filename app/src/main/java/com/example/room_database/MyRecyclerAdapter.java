@@ -82,7 +82,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
         @Override
         public void onClick(View v) {
-            myItemClick.onupdateCustomClick(v,getAdapterPosition());
+            myItemClick.onupdateCustomClick(v, getAdapterPosition());
         }
     }
 
@@ -91,6 +91,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
 interface MyItemClick {
     void onCustomClick(View view, int position);
+
     void onupdateCustomClick(View view, int position);
 }
 
