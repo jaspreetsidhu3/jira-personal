@@ -42,28 +42,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edttit" />
 
-    <TextView
-        android:id="@+id/textpr"
+    <LinearLayout
+        android:id="@+id/layoutPriority"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center_horizontal"
-        android:text="Priority"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtdesc" />
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtdesc">
 
-    <Spinner
-        android:id="@+id/spinprio"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textpr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Priority"></TextView>
+
+        <Spinner
+            android:id="@+id/spinprio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:autofillHints="@string/app_name"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textpr" />
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutPriority">
+        >
 
+        <TextView
+            android:id="@+id/textst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Status"></TextView>
+
+        <Spinner
+            android:id="@+id/spinStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"></Spinner>
+    </LinearLayout>
     <Button
         android:id="@+id/addbtn"
         android:layout_width="match_parent"

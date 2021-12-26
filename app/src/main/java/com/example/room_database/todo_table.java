@@ -12,13 +12,16 @@ public class todo_table {
     public String title;
     @ColumnInfo(name = "priority")
     public int priority;
+    @ColumnInfo(name = "status")
+    public int status;
     @ColumnInfo(name = "description")
     public String description;
 
-    public todo_table(String title, String description, int priority) {
+    public todo_table(String title, String description, int priority, int status) {
         this.title = title;
         this.priority = priority;
         this.description = description;
+        this.status = status;
     }
 
     public void setId(int id) {
@@ -40,4 +43,7 @@ public class todo_table {
     public int getPriority() {
         return priority;
     }
+
+    public int getStatus(){return  status;}
+
 }

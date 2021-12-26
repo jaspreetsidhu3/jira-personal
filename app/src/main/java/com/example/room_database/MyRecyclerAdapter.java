@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     private ArrayList<SingleRow> singleRowArrayList;
     public MyItemClick myItemClick;
     SingleRow singleRow;
+    String arrStatus[];
 
     public MyRecyclerAdapter(Context context, ArrayList<SingleRow> singleRowArrayList, MyItemClick myItemClick) {
         this.context = context;
@@ -31,6 +33,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.singlerow, parent, false);
         MyViewHolder myViewHolder = new MyViewHolder(view, myItemClick);
+        arrStatus = context.getResources().getStringArray(R.array.data_status);
         return myViewHolder;
     }
 
@@ -40,12 +43,14 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
         singleRow = singleRowArrayList.get(position);
         holder.textTitle.setText(singleRow.getTitle());
         holder.textDesc.setText(singleRow.getDescription());
+
+        holder.textStatus.setText(arrStatus[singleRow.getStatus()]);
         int i = singleRow.getPrority();
         if (i == 0) {
-            holder.relativeLayout.setBackgroundColor(context.getResources().getColor(android.R.color.holo_green_dark));
+            holder.priority.setBackgroundColor(context.getResources().getColor(android.R.color.holo_green_dark));
 
         } else {
-            holder.relativeLayout.setBackgroundColor(context.getResources().getColor(android.R.color.holo_red_light));
+            holder.priority.setBackgroundColor(context.getResources().getColor(android.R.color.holo_red_light));
 
         }
 
@@ -60,7 +65,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textTitle;
         TextView textDesc;
-        RelativeLayout relativeLayout;
+        TextView textStatus;
+        ImageView priority;
         MyItemClick myItemClick;
 
         public MyViewHolder(@NonNull View itemView, final MyItemClick myItemClick) {
@@ -69,7 +75,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
             this.myItemClick = myItemClick;
             textDesc = itemView.findViewById(R.id.description);
             itemView.setOnClickListener(this);
-            relativeLayout = itemView.findViewById(R.id.priority);
+            textStatus = itemView.findViewById(R.id.status);
+            priority = itemView.findViewById(R.id.priority);
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {

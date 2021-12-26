@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements MyItemClick {
         Intent intent = new Intent(getApplicationContext(), UpdateScreen.class);
         intent.putExtra("id", singleRow_id.getId());
         intent.putExtra("title", singleRow_id.getTitle());
+        intent.putExtra("priority", singleRow_id.getPrority());
+        intent.putExtra("status", singleRow_id.getStatus());
         intent.putExtra("description", singleRow_id.getDescription());
         startActivity(intent);
     }
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements MyItemClick {
             super.onPostExecute(aVoid);
             singleRowArrayList.clear();
             for (int i = 0; i < li.size(); i++) {
-                singleRow = new SingleRow(li.get(i).getPriority(), li.get(i).getTitle(), li.get(i).getDescription(), li.get(i).getId());
+                singleRow = new SingleRow(li.get(i).getPriority(), li.get(i).getTitle(), li.get(i).getDescription(), li.get(i).getStatus(), li.get(i).getId());
                 singleRowArrayList.add(singleRow);
             }
             allprocessdone();

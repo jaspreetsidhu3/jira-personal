@@ -22,6 +22,6 @@ public interface todoDao {
     @Query("DELETE FROM todo_table WHERE Id = :id")
     public void deleteitem(int id);
 
-    @Query("UPDATE todo_table SET title=:tit, description=:desc, priority=:prio WHERE Id=:id")
-    public void update(String tit, String desc, int prio, int id);
+    @Query("UPDATE todo_table SET title=:tit, description=:desc, priority=:prio, status=:status WHERE Id=:id")
+    public void update(String tit, String desc, int prio, int status, int id);
 }

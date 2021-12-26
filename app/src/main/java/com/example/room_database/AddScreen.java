@@ -20,12 +20,14 @@ public class AddScreen extends AppCompatActivity {
     private EditText edittitle;
     private EditText editdesc;
     private Button btnadd;
-    private Spinner spinner;
+    private Spinner spPriority;
+    private Spinner spStatus;
     AppDatabase appDatabase;
     // Varibles
     String title;
     String desc;
-    int i = -1;
+    int priorityIndex = -1;
+    int statusIndex = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +36,30 @@ public class AddScreen extends AppCompatActivity {
         edittitle = findViewById(R.id.edttit);
         appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Appdatabase").build();
         editdesc = findViewById(R.id.edtdesc);
-        spinner = findViewById(R.id.spinprio);
+        spPriority = findViewById(R.id.spinprio);
+        spStatus = findViewById(R.id.spinStatus);
         btnadd = findViewById(R.id.addbtn);
-        String arr[] = getResources().getStringArray(R.array.data_prio);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, arr);
-        spinner.setAdapter(arrayAdapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        String arrPriority[] = getResources().getStringArray(R.array.data_prio);
+        ArrayAdapter arrayAdapterPriority = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, arrPriority);
+        spPriority.setAdapter(arrayAdapterPriority);
+        spPriority.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                i = position;
+                priorityIndex = position;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        String arrStatus[] = getResources().getStringArray(R.array.data_status);
+        ArrayAdapter arrayAdapterStatus = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, arrStatus);
+        spStatus.setAdapter(arrayAdapterStatus);
+        spStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                statusIndex = position;
             }
 
             @Override
@@ -55,7 +72,7 @@ public class AddScreen extends AppCompatActivity {
             public void onClick(View v) {
                 title = edittitle.getText().toString();
                 desc = editdesc.getText().toString();
-                if (TextUtils.isEmpty(title) || TextUtils.isEmpty(desc) || i == -1) {
+                if (TextUtils.isEmpty(title) || TextUtils.isEmpty(desc) || priorityIndex == -1 || statusIndex==-1) {
                     Toast.makeText(getApplicationContext(), "Fill all categories", Toast.LENGTH_SHORT).show();
                 } else {
                     MyAsync myAsync = new MyAsync();
@@ -69,7 +86,7 @@ public class AddScreen extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            todo_table todo_table = new todo_table(title, desc, i);
+            todo_table todo_table = new todo_table(title, desc, priorityIndex,statusIndex);
             appDatabase.todoDao().insert(todo_table);
             return null;
         }

@@ -1,11 +1,31 @@
 <resources>
-    <string name="app_name">Room_Database</string>
+    <string name="app_name">JIRA -Personal</string>
     <string-array name="data_prio">
         <item>
             Low
         </item>
         <item>
             High
+        </item>
+    </string-array>
+    <string-array name="data_status">
+        <item>
+            Open
+        </item>
+        <item>
+            In Progress
+        </item>
+        <item>
+            In Dev
+        </item>
+        <item>
+            In Review
+        </item>
+        <item>
+            Completed
+        </item>
+        <item>
+            Re-Open
         </item>
     </string-array>
 </resources>
