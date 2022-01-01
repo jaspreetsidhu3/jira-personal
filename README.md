@@ -3,13 +3,7 @@
 </div>
 
 ## About The Project
-To do android application which is implemented using Room Database.
-
-Features:
-* Set priorities.
-* Simple and clean UI.
-
-
+Jira-personal helps to maintain your tasks efficiently by adding priorities and status with it.
 
 ### Built With
 
@@ -24,11 +18,11 @@ Features:
 
 1. Clone the repo.
 
-2. Open with editors like Android Studio or VS Code.
+2. Open the project in IDE.
 
 3. Delete the Screenshot folder.
 
-4. Run the app from editors on your device.
+4. Build and run the app on your device.
 
 
 <!-- CONTRIBUTING -->
@@ -51,5 +45,3 @@ Contributions are what make the open source community such an amazing place to b
 ## Contact
 
 Name - [Jaspreet Singh](https://www.linkedin.com/in/jaspreetsidhu13/) -  jaspreetsidhu3may@gmail.com
-
-Project Link: [Room_Database](https://github.com/jaspreetsidhu3/room_database)
