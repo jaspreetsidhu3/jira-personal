@@ -44,4 +44,4 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Name - [Jaspreet Singh](https://www.linkedin.com/in/jaspreetsidhu13/)
+[Jaspreet Singh](https://www.linkedin.com/in/jaspreetsidhu13/)
